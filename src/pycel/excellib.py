@@ -136,6 +136,21 @@ def ceiling_precise(number, significance=1):
     return significance * math.ceil(number / significance)
 
 
+def choose(index_num, *values):
+    # Excel reference: https://support.office.com/en-us/article/CHOOSE-function-fc5c184f-cb62-4ec7-a46e-38653b98f5bc
+    #    choose-function-fc5c184f-cb62-4ec7-a46e-38653b98f5bc
+
+    index = int(index_num)
+
+    if index <= 0 or index > 254:
+        return VALUE_ERROR
+
+    elif index > len(values):
+        return VALUE_ERROR
+    else:
+        return values[index - 1]
+
+
 def count(*args):
     # Excel reference: https://support.office.com/en-us/article/
     #   COUNT-function-a59cd7fc-b623-4d93-87a4-d23bf411294c

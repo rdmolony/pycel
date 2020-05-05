@@ -20,6 +20,7 @@ from pycel.excellib import (
     ceiling,
     ceiling_math,
     ceiling_precise,
+    choose,
     conditional_format_ids,
     count,
     countif,
@@ -224,6 +225,20 @@ class TestCeilingFloor:
     @pytest.mark.parametrize(params, tuple(zip(*inputs, data['floor_prec'])))
     def test_floor_precise(number, significance, result):
         assert floor_precise(number, significance) == result
+
+
+class TestChoose:
+    @staticmethod
+    def test_choose_index():
+        assert choose(3, 'John', 'Paul', 'George', 'Ringo') == 'George'
+
+    @staticmethod
+    def test_choose_fraction(self):
+        assert choose(3.4, 'John', 'Paul', 'George', 'Ringo') == 'George'
+
+    @staticmethod
+    def test_choose_incorrect_index(self):
+        assert isinstance(choose(3, 2), VALUE_ERROR)
 
 
 @pytest.mark.parametrize(
@@ -900,7 +915,8 @@ def test_xmin():
 )
 def test_x_round(result, digits):
     assert result == x_round(12345.6789, digits)
-    assert result == x_round(12345.6789, digits + (-0.9 if digits < 0 else 0.9))
+    assert result == x_round(12345.6789, digits +
+                             (-0.9 if digits < 0 else 0.9))
 
 
 @pytest.mark.parametrize(
