@@ -233,12 +233,12 @@ class TestChoose:
         assert choose(3, 'John', 'Paul', 'George', 'Ringo') == 'George'
 
     @staticmethod
-    def test_choose_fraction(self):
+    def test_choose_fraction():
         assert choose(3.4, 'John', 'Paul', 'George', 'Ringo') == 'George'
 
     @staticmethod
-    def test_choose_incorrect_index(self):
-        assert isinstance(choose(3, 2), VALUE_ERROR)
+    def test_choose_incorrect_index():
+        assert choose(3, 2) is VALUE_ERROR
 
 
 @pytest.mark.parametrize(

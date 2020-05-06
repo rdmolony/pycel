@@ -147,6 +147,7 @@ def choose(index_num, *values):
 
     elif index > len(values):
         return VALUE_ERROR
+
     else:
         return values[index - 1]
 
