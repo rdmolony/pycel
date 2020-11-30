@@ -226,6 +226,20 @@ class TestCeilingFloor:
         assert floor_precise(number, significance) == result
 
 
+class TestChoose:
+    @staticmethod
+    def test_choose_index():
+        assert choose(3, 'John', 'Paul', 'George', 'Ringo') == 'George'
+
+    @staticmethod
+    def test_choose_fraction():
+        assert choose(3.4, 'John', 'Paul', 'George', 'Ringo') == 'George'
+
+    @staticmethod
+    def test_choose_incorrect_index():
+        assert choose(3, 2) is VALUE_ERROR
+
+
 @pytest.mark.parametrize(
     'args, result', (
         (((True, 1, 0), (True, 2, 1), (True, 3, 0)), [1, 2]),
