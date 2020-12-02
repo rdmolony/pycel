@@ -20,6 +20,7 @@ from pycel.excellib import (
     ceiling,
     ceiling_math,
     ceiling_precise,
+    choose,
     conditional_format_ids,
     count,
     countif,
