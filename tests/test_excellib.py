@@ -630,7 +630,7 @@ class TestMod:
 
 
 def test_na():
-    assert na() is None
+    assert na() == NA_ERROR
 
 
 @pytest.mark.parametrize(
