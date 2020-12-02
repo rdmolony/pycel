@@ -436,6 +436,15 @@ def get_numeric(value):
         except:
             return False
 
+
+@excel_math_func
+def na():
+    # Excel reference: https://support.office.com/en-us/article/
+    #   na-function-5469c2d1-a90c-4fb5-9bbc-64bd9bb6b47c
+
+    return "#N/A"
+
+
 @excel_math_func
 def npv(rate, *args):
     # Excel reference: https://support.office.com/en-us/article/

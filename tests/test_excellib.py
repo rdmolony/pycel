@@ -45,6 +45,7 @@ from pycel.excellib import (
     maxifs,
     minifs,
     mod,
+    na,
     npv,
     odd,
     power,
@@ -626,6 +627,10 @@ class TestMod:
         assert 2 == mod(10, 4)
         assert mod(2.2, 1) == pytest.approx(0.2)
         assert mod(2, 1.1) == pytest.approx(0.9)
+
+
+def test_na():
+    assert na() == "#N/A"
 
 
 @pytest.mark.parametrize(
