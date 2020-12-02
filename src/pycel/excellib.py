@@ -137,7 +137,7 @@ def ceiling_precise(number, significance=1):
 
 
 def choose(index_num, *values):
-    # Excel reference: https://support.office.com/en-us/article/CHOOSE-function-fc5c184f-cb62-4ec7-a46e-38653b98f5bc
+    # Excel reference: https://support.office.com/en-us/article
     #    choose-function-fc5c184f-cb62-4ec7-a46e-38653b98f5bc
     index = int(index_num)
     if index <= 0 or index > 254:
